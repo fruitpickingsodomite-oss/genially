@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía Interactiva PRL - Cocina Hotel 4* Granada</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Montserrat & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            card: '#1e293b',
+                            accent: '#f97316', // Safety orange
+                            green: '#10b981',  // Emerald safety
+                            yellow: '#f59e0b', // Warning amber
+                            red: '#ef4444',    // Danger red
+                            blue: '#3b82f6',   // Info blue
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        
+        .heading-font {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Glassmorphism background cards */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(249, 115, 22, 0.4);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        /* Pulse glow for key alerts */
+        .pulse-glow {
+            animation: pulse-border 2s infinite;
+        }
+
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.5); }
+            70% { box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f97316;
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-12">
+
+    <!-- Header / Banner Infográfico -->
+    <header class="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-slate-700/60 pt-8 pb-10 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto">
+            <!-- Top Badges -->
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                <div class="flex items-center gap-2 bg-slate-800/80 text-orange-400 border border-orange-500/30 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+                    <i class="fa-solid font-bold fa-shield-halved"></i> Caso Práctico PRL • GafasDeFOL
+                </div>
+                <div class="flex items-center gap-3 text-xs text-slate-400">
+                    <span class="flex items-center gap-1"><i class="fa-solid fa-hotel text-amber-400"></i> Hotel 4★ Centro Granada</span>
+                    <span class="hidden md:inline">•</span>
+                    <span class="flex items-center gap-1"><i class="fa-solid fa-users text-emerald-400"></i> 25 Trabajadores</span>
+                    <span class="hidden md:inline">•</span>
+                    <span class="flex items-center gap-1"><i class="fa-solid fa-clock text-blue-400"></i> Turnos M / T / N</span>
+                </div>
+            </div>
+
+            <!-- Title & Subtitle -->
+            <div class="text-center md:text-left my-4">
+                <h1 class="heading-font text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
+                    EVALUACIÓN DE RIESGOS LABORALES EN COCINA
+                </h1>
+                <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-3xl leading-relaxed">
+                    Plan Integral de Prevención de Riesgos Laborales (PRL) diseñado específicamente para el equipo de cocina. Identificación de peligros, evaluación de daños, matriz de riesgo e implantación de medidas correctoras.
+                </p>
+            </div>
+
+            <!-- Key Quick Stats Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
+                <div class="bg-slate-800/70 p-3 rounded-xl border border-slate-700/50 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-medium">Plantilla</p>
+                        <p class="text-sm font-bold text-white">25 Personas</p>
+                    </div>
+                </div>
+                <div class="bg-slate-800/70 p-3 rounded-xl border border-slate-700/50 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-medium">Jornada</p>
+                        <p class="text-sm font-bold text-white">Rotatoria M/T/N</p>
+                    </div>
+                </div>
+                <div class="bg-slate-800/70 p-3 rounded-xl border border-slate-700/50 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-medium">Marco Legal</p>
+                        <p class="text-sm font-bold text-white">LPRL 31/1995</p>
+                    </div>
+                </div>
+                <div class="bg-slate-800/70 p-3 rounded-xl border border-slate-700/50 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-medium">Ubicación</p>
+                        <p class="text-sm font-bold text-white">Granada Centro</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Infographic Content Body -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-8 mt-8 space-y-10">
+
+        <!-- SECTION 1: PREGUNTA ESENCIAL Y CONTEXTO DE TRABAJO -->
+        <section class="glass-card rounded-2xl p-6 sm:p-8 border-l-4 border-l-orange-500">
+            <div class="flex flex-col md:flex-row gap-6 items-start justify-between">
+                <div class="space-y-3 flex-1">
+                    <div class="inline-flex items-center gap-2 text-xs font-bold text-orange-400 bg-orange-950/50 px-2.5 py-1 rounded border border-orange-500/30">
+                        <i class="fa-solid fa-circle-question"></i> PREGUNTA ESENCIAL DE INVESTIGACIÓN
+                    </div>
+                    <h2 class="heading-font text-xl sm:text-2xl font-bold text-white">
+                        ¿Qué debe contener el protocolo de evaluación de riesgos profesionales en la cocina de un hotel urbano con 25 trabajadores?
+                    </h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Como chef/responsable de cocina, la prevención no es una opción legal sino un deber ético y operativo. Un protocolo eficaz garantiza la integridad física, minimiza el absentismo laboral, previene sanciones administrativas y mantiene un clima de trabajo saludable en momentos de máxima presión hostelera.
+                    </p>
+                </div>
+                <!-- Interactive Action Badge -->
+                <div class="bg-slate-900/80 border border-slate-700 rounded-xl p-4 w-full md:w-80 shrink-0 text-xs space-y-2">
+                    <div class="font-bold text-emerald-400 flex items-center gap-2">
+                        <i class="fa-solid fa-bullseye"></i> Objetivos del Protocolo:
+                    </div>
+                    <ul class="space-y-1.5 text-slate-300">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> Evaluación objetiva por puesto de trabajo.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> Implantación de Medidas Técnicas y EPIs.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5"></i> Formación y vigilancia de la salud continua.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: MAPA INTERACTIVO DE FACTORES DE RIESGO Y DAÑOS FRECUENTES -->
+        <section>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+                <div>
+                    <h2 class="heading-font text-2xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-triangle-exclamation text-amber-500"></i>
+                        Factores de Riesgo y Daños en Cocina
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-400">Haz clic en cada tarjeta para desplegar el análisis de causas y medidas preventivas específicas.</p>
+                </div>
+                <!-- Filter Pills -->
+                <div class="flex flex-wrap gap-2 text-xs">
+                    <button onclick="filterRisks('all')" id="btn-all" class="px-3 py-1.5 rounded-lg bg-orange-500 text-white font-medium hover:bg-orange-600 transition-colors">Todos</button>
+                    <button onclick="filterRisks('fisico')" id="btn-fisico" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 font-medium hover:bg-slate-700 transition-colors border border-slate-700">Físicos / Mecánicos</button>
+                    <button onclick="filterRisks('ergonomico')" id="btn-ergonomico" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 font-medium hover:bg-slate-700 transition-colors border border-slate-700">Ergonómicos</button>
+                    <button onclick="filterRisks('psicosocial')" id="btn-psicosocial" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 font-medium hover:bg-slate-700 transition-colors border border-slate-700">Psicosociales</button>
+                </div>
+            </div>
+
+            <!-- Risk Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="risk-cards-container">
+                
+                <!-- Risk Card 1 -->
+                <div class="risk-card glass-card rounded-xl p-5 cursor-pointer relative overflow-hidden group" data-category="fisico" onclick="openModal('caidas')">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-amber-500"></div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-shoe-prints"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-950/60 px-2 py-0.5 rounded border border-amber-500/30">Riesgo Mecánico</span>
+                            <h3 class="heading-font font-bold text-lg text-white group-hover:text-orange-400 transition-colors">Caídas al Mismo Nivel</h3>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-300 mb-4 line-clamp-2">
+                        Presencia de agua, grasa o restos orgánicos en el suelo de baldosas durante los pases de comidas.
+                    </p>
+                    <div class="pt-3 border-t border-slate-700/60 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 font-medium"><i class="fa-solid fa-head-side-virus text-red-400 mr-1"></i> Daño: Esguinces, contusiones</span>
+                        <span class="text-orange-400 font-bold group-hover:underline flex items-center gap-1">Ver detalles <i class="fa-solid fa-chevron-right text-[10px]"></i></span>
+                    </div>
+                </div>
+
+                <!-- Risk Card 2 -->
+                <div class="risk-card glass-card rounded-xl p-5 cursor-pointer relative overflow-hidden group" data-category="fisico" onclick="openModal('cortes')">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-red-500"></div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-knife-kitchen"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-red-400 bg-red-950/60 px-2 py-0.5 rounded border border-red-500/30">Riesgo Mecánico</span>
+                            <h3 class="heading-font font-bold text-lg text-white group-hover:text-orange-400 transition-colors">Cortes y Pinchazos</h3>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-300 mb-4 line-clamp-2">
+                        Uso continuo de cuchillería de alto filo, picadoras, cortadoras de fiambre y manipulación de vajilla/cristal roto.
+                    </p>
+                    <div class="pt-3 border-t border-slate-700/60 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 font-medium"><i class="fa-solid fa-head-side-virus text-red-400 mr-1"></i> Daño: Heridas profundas, amputaciones</span>
+                        <span class="text-orange-400 font-bold group-hover:underline flex items-center gap-1">Ver detalles <i class="fa-solid fa-chevron-right text-[10px]"></i></span>
+                    </div>
+                </div>
+
+                <!-- Risk Card 3 -->
+                <div class="risk-card glass-card rounded-xl p-5 cursor-pointer relative overflow-hidden group" data-category="fisico" onclick="openModal('quemaduras')">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-orange-500"></div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-fire-burner"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-orange-400 bg-orange-950/60 px-2 py-0.5 rounded border border-orange-500/30">Riesgo Térmico</span>
+                            <h3 class="heading-font font-bold text-lg text-white group-hover:text-orange-400 transition-colors">Quemaduras y Fuego</h3>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-300 mb-4 line-clamp-2">
+                        Contacto directo con planchas, freidoras a alta temperatura, hornos industriales y proyecciones de aceite hirviendo.
+                    </p>
+                    <div class="pt-3 border-t border-slate-700/60 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 font-medium"><i class="fa-solid fa-head-side-virus text-red-400 mr-1"></i> Daño: Quemaduras 1º, 2º y 3º grado</span>
+                        <span class="text-orange-400 font-bold group-hover:underline flex items-center gap-1">Ver detalles <i class="fa-solid fa-chevron-right text-[10px]"></i></span>
+                    </div>
+                </div>
+
+                <!-- Risk Card 4 -->
+                <div class="risk-card glass-card rounded-xl p-5 cursor-pointer relative overflow-hidden group" data-category="ergonomico" onclick="openModal('ergonomia')">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-blue-500"></div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-child-reaching"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-blue-400 bg-blue-950/60 px-2 py-0.5 rounded border border-blue-500/30">Riesgo Ergonómico</span>
+                            <h3 class="heading-font font-bold text-lg text-white group-hover:text-orange-400 transition-colors">Sobreesfuerzo y TME</h3>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-300 mb-4 line-clamp-2">
+                        Bipedestación prolongada (8h de pie), manipulación manual de ollas pesadas y movimientos repetitivos de picado.
+                    </p>
+                    <div class="pt-3 border-t border-slate-700/60 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 font-medium"><i class="fa-solid fa-head-side-virus text-red-400 mr-1"></i> Daño: Lumbalgias, tendinitis</span>
+                        <span class="text-orange-400 font-bold group-hover:underline flex items-center gap-1">Ver detalles <i class="fa-solid fa-chevron-right text-[10px]"></i></span>
+                    </div>
+                </div>
+
+                <!-- Risk Card 5 -->
+                <div class="risk-card glass-card rounded-xl p-5 cursor-pointer relative overflow-hidden group" data-category="psicosocial" onclick="openModal('psicosocial')">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-purple-500"></div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-950/60 px-2 py-0.5 rounded border border-purple-500/30">Riesgo Psicosocial</span>
+                            <h3 class="heading-font font-bold text-lg text-white group-hover:text-orange-400 transition-colors">Turnicidad y Estrés</h3>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-300 mb-4 line-clamp-2">
+                        Rotación continua en 3 turnos (M/T/N), ritmos de trabajo intensos en horas de servicio de restaurante y conciliación.
+                    </p>
+                    <div class="pt-3 border-t border-slate-700/60 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 font-medium"><i class="fa-solid fa-head-side-virus text-red-400 mr-1"></i> Daño: Burnout, trastornos del sueño</span>
+                        <span class="text-orange-400 font-bold group-hover:underline flex items-center gap-1">Ver detalles <i class="fa-solid fa-chevron-right text-[10px]"></i></span>
+                    </div>
+                </div>
+
+                <!-- Risk Card 6 -->
+                <div class="risk-card glass-card rounded-xl p-5 cursor-pointer relative overflow-hidden group" data-category="fisico" onclick="openModal('ambiental')">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-emerald-500"></div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-temperature-arrow-up"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">Riesgo Ambiental</span>
+                            <h3 class="heading-font font-bold text-lg text-white group-hover:text-orange-400 transition-colors">Estrés Térmico y Ruido</h3>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-300 mb-4 line-clamp-2">
+                        Altas temperaturas en zona de cocción combinadas con cambios bruscos al entrar en cámaras frigoríficas (-18ºC).
+                    </p>
+                    <div class="pt-3 border-t border-slate-700/60 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 font-medium"><i class="fa-solid fa-head-side-virus text-red-400 mr-1"></i> Daño: Golpes de calor, resfriados</span>
+                        <span class="text-orange-400 font-bold group-hover:underline flex items-center gap-1">Ver detalles <i class="fa-solid fa-chevron-right text-[10px]"></i></span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 3: CALCULADORA INTERACTIVA DE EVALUACIÓN DE RIESGO (MATRIZ P x S) -->
+        <section class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-700/70">
+            <div class="max-w-3xl mb-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/60 px-2.5 py-1 rounded border border-emerald-500/30">Herramienta Práctica</span>
+                <h2 class="heading-font text-2xl font-bold text-white mt-2">Calculadora de Nivel de Riesgo (Método NTP 330 / Fine)</h2>
+                <p class="text-slate-300 text-xs sm:text-sm mt-1">
+                    Selecciona la probabilidad de ocurrencia y la gravedad de las consecuencias para determinar la urgencia de la intervención en la cocina del hotel.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center bg-slate-900/90 p-5 rounded-xl border border-slate-800">
+                <!-- Select Probabilidad -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 uppercase mb-2">1. Probabilidad (P)</label>
+                    <select id="select-prob" onchange="calculateRisk()" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-orange-500">
+                        <option value="1">Baja (Raro que ocurra)</option>
+                        <option value="2" selected>Media (Ocurre ocasionalmente)</option>
+                        <option value="3">Alta (Ocurre con frecuencia)</option>
+                    </select>
+                </div>
+
+                <!-- Select Severidad -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 uppercase mb-2">2. Severidad / Consecuencias (S)</label>
+                    <select id="select-sev" onchange="calculateRisk()" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-orange-500">
+                        <option value="1">Ligeramente Dañino (Cortes superficiales)</option>
+                        <option value="2" selected>Dañino (Quemaduras, baja médica temporal)</option>
+                        <option value="3">Extremadamente Dañino (Amputaciones, invalidez)</option>
+                    </select>
+                </div>
+
+                <!-- Result Display -->
+                <div id="risk-result-box" class="bg-amber-500/20 border border-amber-500/40 p-4 rounded-xl text-center">
+                    <p class="text-xs uppercase font-bold text-slate-400">Estimación del Riesgo</p>
+                    <h3 id="risk-level-title" class="heading-font text-xl font-extrabold text-amber-400 my-1">RIESGO MODERADO</h3>
+                    <p id="risk-action-text" class="text-xs text-slate-300">Se deben hacer esfuerzos para reducir el riesgo. Planificar medidas en plazo determinado.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: PROTOCOLO DE EVALUACIÓN Y PLAN DE ACCIÓN DE 5 PASOS -->
+        <section class="space-y-6">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="heading-font text-2xl sm:text-3xl font-extrabold text-white">
+                    Protocolo de Actuación Prevención en 5 Pasos
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-400 mt-2">
+                    Secuencia técnica para ejecutar la evaluación de riesgos con la plantilla de 25 profesionales.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <!-- Step 1 -->
+                <div class="glass-card p-5 rounded-xl border-t-4 border-t-blue-500 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 font-black text-sm flex items-center justify-center mb-3">01</div>
+                        <h3 class="font-bold text-sm text-white mb-2">Identificación de Puestos</h3>
+                        <p class="text-xs text-slate-300">Análisis detallado de zonas: zona caliente, plonge/lavado, economato y repostería.</p>
+                    </div>
+                    <span class="mt-4 text-[10px] text-blue-400 font-bold uppercase">Fase Inicial</span>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="glass-card p-5 rounded-xl border-t-4 border-t-amber-500 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 font-black text-sm flex items-center justify-center mb-3">02</div>
+                        <h3 class="font-bold text-sm text-white mb-2">Medición y Valoración</h3>
+                        <p class="text-xs text-slate-300">Aplicación de la matriz de riesgo (P x S) e inspección técnica directa en turnos M/T/N.</p>
+                    </div>
+                    <span class="mt-4 text-[10px] text-amber-400 font-bold uppercase">Análisis Técnico</span>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="glass-card p-5 rounded-xl border-t-4 border-t-orange-500 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-8 h-8 rounded-full bg-orange-500/20 text-orange-400 font-black text-sm flex items-center justify-center mb-3">03</div>
+                        <h3 class="font-bold text-sm text-white mb-2">Medidas y Entrega EPIs</h3>
+                        <p class="text-xs text-slate-300">Calzado SRC antideslizante, guantes de malla de acero anticorte, mangas antitérmicas.</p>
+                    </div>
+                    <span class="mt-4 text-[10px] text-orange-400 font-bold uppercase">Protección Directa</span>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="glass-card p-5 rounded-xl border-t-4 border-t-purple-500 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 font-black text-sm flex items-center justify-center mb-3">04</div>
+                        <h3 class="font-bold text-sm text-white mb-2">Formación Continuada</h3>
+                        <p class="text-xs text-slate-300">Cursos prácticos de manipulación segura de cuchillos, higiene postural y emergencia.</p>
+                    </div>
+                    <span class="mt-4 text-[10px] text-purple-400 font-bold uppercase">Capacitación</span>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="glass-card p-5 rounded-xl border-t-4 border-t-emerald-500 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-black text-sm flex items-center justify-center mb-3">05</div>
+                        <h3 class="font-bold text-sm text-white mb-2">Revisión y Control</h3>
+                        <p class="text-xs text-slate-300">Auditorías periódicas trimestrales y reevaluación tras cambios en la maquinaria o personal.</p>
+                    </div>
+                    <span class="mt-4 text-[10px] text-emerald-400 font-bold uppercase">Mejora Continua</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: CONSECUENCIAS DE UNA MALA EVALUACIÓN / NO APLICACIÓN -->
+        <section class="glass-card rounded-2xl p-6 sm:p-8 bg-gradient-to-br from-slate-900 via-slate-800 to-red-950/40 border border-red-500/30">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="space-y-3 max-w-2xl">
+                    <span class="inline-flex items-center gap-1.5 text-xs font-bold text-red-400 bg-red-950/80 border border-red-500/40 px-3 py-1 rounded-full">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Impacto Negativo
+                    </span>
+                    <h2 class="heading-font text-xl sm:text-2xl font-bold text-white">
+                        ¿Qué ocurre si NO se realiza o se diseña mal la evaluación de riesgos?
+                    </h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-slate-300">
+                        <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800">
+                            <span class="font-bold text-red-400 block mb-1"><i class="fa-solid fa-gavel mr-1"></i> Sanciones Legales Graves</span>
+                            Multas de Inspección de Trabajo (LISOS) hasta 819.780 € en faltas muy graves, más responsabilidad penal directiva.
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800">
+                            <span class="font-bold text-red-400 block mb-1"><i class="fa-solid fa-user-xmark mr-1"></i> Alta Siniestralidad y Bajas</span>
+                            Aumento dramático de bajas por ILT, sobrecostes por sustituciones temporales y desorganización de turnos.
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800">
+                            <span class="font-bold text-red-400 block mb-1"><i class="fa-solid fa-face-frown mr-1"></i> Clima Laboral Tóxico</span>
+                            Desmotivación del equipo de 25 personas, rotación constante de cocineros y pérdida de talento cualificado.
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800">
+                            <span class="font-bold text-red-400 block mb-1"><i class="fa-solid fa-hotel mr-1"></i> Daño Reputacional Hotelero</span>
+                            Paralización temporal de la cocina por la autoridad laboral e impacto negativo en las estrellas del hotel.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Alert Card -->
+                <div class="bg-red-500/10 border border-red-500/30 rounded-xl p-6 text-center max-w-xs shrink-0">
+                    <div class="w-16 h-16 mx-auto rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-3xl mb-3 pulse-glow">
+                        <i class="fa-solid fa-shield-cat"></i>
+                    </div>
+                    <h3 class="heading-font font-bold text-white text-base">Responsabilidad Legal</h3>
+                    <p class="text-xs text-slate-300 mt-2">
+                        El responsable de cocina y la dirección hotelera comparten el deber de protección según el **Art. 14 de la Ley 31/1995**.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: BOTÓN DE EMBEBIDO Y EXPORTACIÓN PARA GENIALLY -->
+        <section class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 text-center space-y-4">
+            <h2 class="heading-font text-lg font-bold text-white flex items-center justify-center gap-2">
+                <i class="fa-solid fa-code text-orange-400"></i> ¿Cómo insertar esta Infografía en Genially?
+            </h2>
+            <p class="text-xs text-slate-300 max-w-xl mx-auto">
+                Para incluir esta infografía interactiva en Genially, utiliza la opción **Insertar > HTML / Código iframe** y pega la URL de este artefacto o iframe directo.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <button onclick="copyEmbedCode()" class="bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs px-5 py-2.5 rounded-xl transition-all shadow-lg flex items-center gap-2">
+                    <i class="fa-solid fa-copy"></i> Copiar Código Iframe / Embed
+                </button>
+                <button onclick="window.print()" class="bg-slate-700 hover:bg-slate-600 text-white font-bold text-xs px-5 py-2.5 rounded-xl transition-all flex items-center gap-2 border border-slate-600">
+                    <i class="fa-solid fa-print"></i> Imprimir / Guardar en PDF
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER CREDITS -->
+    <footer class="mt-12 text-center text-xs text-slate-500 border-t border-slate-800 pt-6">
+        <p>Infografía Interactiva PRL de Cocina • Diseñada para el Caso Práctico GafasDeFOL • Hotel 4★ Granada</p>
+        <p class="mt-1 text-[11px] text-slate-600">Basado en la Ley 31/1995 de Prevención de Riesgos Laborales y Guías Técnicas del INSST.</p>
+    </footer>
+
+    <!-- MODAL DIALOG FOR DETAILED RISK INFO -->
+    <div id="risk-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-4 z-50">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-xl w-full p-6 shadow-2xl relative overflow-hidden animate-fade-in">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+                <div class="flex items-center gap-3">
+                    <div id="modal-icon-bg" class="w-10 h-10 rounded-lg flex items-center justify-center text-xl font-bold">
+                        <i id="modal-icon" class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div>
+                        <span id="modal-category" class="text-[10px] font-bold uppercase tracking-wider text-orange-400 bg-orange-950/60 px-2 py-0.5 rounded border border-orange-500/30">Categoría</span>
+                        <h3 id="modal-title" class="heading-font text-xl font-bold text-white">Título del Riesgo</h3>
+                    </div>
+                </div>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-white text-xl p-1 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content Body -->
+            <div class="space-y-4 text-xs text-slate-300">
+                <div>
+                    <h4 class="font-bold text-slate-200 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                        <i class="fa-solid fa-magnifying-glass text-orange-400"></i> Causas Principales en Cocina:
+                    </h4>
+                    <p id="modal-causes" class="bg-slate-800/60 p-3 rounded-lg border border-slate-800 leading-relaxed">
+                        Causas específicas identificadas en la cocina del hotel...
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-200 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                        <i class="fa-solid fa-user-injured text-red-400"></i> Daños a la Salud Asociados:
+                    </h4>
+                    <p id="modal-damages" class="bg-slate-800/60 p-3 rounded-lg border border-slate-800 leading-relaxed">
+                        Daños físicos o psicológicos...
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-200 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                        <i class="fa-solid fa-shield-virus text-emerald-400"></i> Medidas Preventivas y EPIs Obligatorios:
+                    </h4>
+                    <ul id="modal-measures" class="bg-slate-800/60 p-3 rounded-lg border border-slate-800 space-y-1.5 list-disc list-inside text-slate-200">
+                        <li>Medida preventiva 1</li>
+                        <li>Medida preventiva 2</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="mt-6 pt-4 border-t border-slate-800 text-right">
+                <button onclick="closeModal()" class="bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs px-5 py-2 rounded-lg transition-colors">
+                    Entendido / Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Modal Data Repository
+        const riskDetails = {
+            caidas: {
+                title: "Caídas al Mismo Nivel",
+                category: "Riesgo Mecánico / Instalaciones",
+                icon: "fa-shoe-prints",
+                iconColor: "text-amber-400",
+                iconBg: "bg-amber-500/20",
+                causes: "Presencia constante de agua de lavado, derrames de aceite/grasa, suelas de calzado inadecuadas y desorden con cajas o recipientes en zonas de paso estrechas durante el servicio.",
+                damages: "Contusiones, luxaciones, esguinces de tobillo/rodilla, fracturas óseas y lumbalgias por caída brusca.",
+                measures: [
+                    "Suelo antideslizante con coeficiente de resbaladicidad C3 en toda la cocina.",
+                    "Uso obligatorio de Calzado de Seguridad de Trabajo SRC (suela antideslizante y resistente a grasas).",
+                    "Limpieza inmediata de derrames con productos desengrasantes y señalización de 'Suelo Mojado'.",
+                    "Mantener pasillos y zonas de paso libres de cajas de suministros."
+                ]
+            },
+            cortes: {
+                title: "Cortes y Pinchazos",
+                category: "Riesgo Mecánico / Herramientas",
+                icon: "fa-knife-kitchen",
+                iconColor: "text-red-400",
+                iconBg: "bg-red-500/20",
+                causes: "Manipulación de cuchillos deshuesadores y de chef sin la técnica adecuada, prisa en horas punta, limpieza de cuchillas de cortadoras de fiambre/picadoras y rotura de cristal/vajilla en la plonge.",
+                damages: "Heridas incisocortantes profundas, hemorragias, cortes en tendones de las manos e infecciones secundarias.",
+                measures: [
+                    "Uso obligatorio de guantes de malla metálica o guantes anticorte Nivel 5 en labores de deshuesado y troceado.",
+                    "Uso de empujadores homologados en cortadoras eléctricas (prohibido usar las manos directamente).",
+                    "Afilado y mantenimiento periódico de la cuchillería (un cuchillo sin filo requiere más fuerza y resbala más).",
+                    "Protocolo de eliminación segura de vajilla o cristal roto en contenedores rígidos."
+                ]
+            },
+            quemaduras: {
+                title: "Quemaduras y Contactos Térmicos",
+                category: "Riesgo Térmico / Maquinaria",
+                icon: "fa-fire-burner",
+                iconColor: "text-orange-400",
+                iconBg: "bg-orange-500/20",
+                causes: "Contacto con fogones, recipientes metálicos calientes, apertura incauta de hornos de vapor sin evacuación previa y salpicaduras de aceite hirviendo al introducir alimentos húmedos en freidoras.",
+                damages: "Quemaduras térmicas de 1º, 2º y 3º grado en manos, brazos y cara, además de ampollas e infecciones dermatológicas.",
+                measures: [
+                    "Uso de manoplas e indumentaria ignífuga/antitérmica de protección para manipular recipientes del horno.",
+                    "Apertura progresiva de puertas de hornos (primero entreabrir para liberar vapor acumulado).",
+                    "Secado previo de alimentos antes de sumergirlos en aceite hirviendo.",
+                    "Mantenimiento de los termostatos de seguridad en freidoras y planchas."
+                ]
+            },
+            ergonomia: {
+                title: "Sobreesfuerzo y Trastornos Musculoesqueléticos",
+                category: "Riesgo Ergonómico / Postural",
+                icon: "fa-child-reaching",
+                iconColor: "text-blue-400",
+                iconBg: "bg-blue-500/20",
+                causes: "Levantamiento indebido de cazuelas grandes (20-30 kg), cajas de víveres en economato, bipedestación prolongada (8 horas de pie) y movimientos repetitivos de muñeca durante el picado.",
+                damages: "Lumbalgias agudas, hernias discales, tendinitis en muñeca/hombro (síndrome del túnel carpiano) y fatiga muscular crónica.",
+                measures: [
+                    "Levantamiento de cargas > 15 kg entre dos personas o uso de carros de transporte con ruedas.",
+                    "Formación en Higiene Postural (doblar rodillas y mantener la espalda recta al elevar pesos).",
+                    "Alfombras ergonómicas antifatiga en zonas estáticas de corte y preparación.",
+                    "Rotación de tareas dentro de la jornada para alterar grupos musculares exigidos."
+                ]
+            },
+            psicosocial: {
+                title: "Turnicidad y Estrés Laboral",
+                category: "Riesgo Psicosocial",
+                icon: "fa-brain",
+                iconColor: "text-purple-400",
+                iconBg: "bg-purple-500/20",
+                causes: "Rotación frecuente entre turnos de mañana, tarde y noche en la plantilla de 25 personas, acumulación de comensales en horas punta de restaurante/eventos y dificultad para conciliar la vida personal.",
+                damages: "Síndrome de Burnout (estar quemado), alteraciones del ritmo circadiano/sueño, problemas digestivos, ansiedad e irritabilidad.",
+                measures: [
+                    "Diseño de turnos de trabajo estables con calendarios rotatorios planificados con al menos 1 mes de antelación.",
+                    "Respeto estricto del descanso mínimo entre jornadas (12 horas consecutivas).",
+                    "Protocolos de comunicación clara entre el jefe de cocina y el equipo para evitar picos de tensión.",
+                    "Fomento de pausas breves de desconexión durante los pases de comidas."
+                ]
+            },
+            ambiental: {
+                title: "Estrés Térmico y Ruido Ambientales",
+                category: "Riesgo Ambiental",
+                icon: "fa-temperature-arrow-up",
+                iconColor: "text-emerald-400",
+                iconBg: "bg-emerald-500/20",
+                causes: "Calor extremo generado por la zona de cocción combinada con visitas frecuentes a cámaras de congelación (-18ºC) e hidratación insuficiente. Ruido continuo de campanas extractoras y lavavajillas.",
+                damages: "Golpes de calor, deshidratación, choques térmicos, afonías/resfriados y fatiga auditiva.",
+                measures: [
+                    "Campanas Extractoras de humos e insuflación de aire fresco bien dimensionadas y mantenidas.",
+                    "Disponibilidad constante de fuentes de agua fresca e isotónica para el equipo.",
+                    "Ropa de abrigo adecuada (chaquetones frigoríficos) antes de acceder a cámaras negativas.",
+                    "Insonorización de motores de extracción para mantener el nivel sonoro < 80 dBA."
+                ]
+            }
+        };
+
+        // Open Modal Function
+        function openModal(riskKey) {
+            const data = riskDetails[riskKey];
+            if (!data) return;
+
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-category').innerText = data.category;
+            document.getElementById('modal-causes').innerText = data.causes;
+            document.getElementById('modal-damages').innerText = data.damages;
+            
+            // Icon Styling
+            const iconBg = document.getElementById('modal-icon-bg');
+            const icon = document.getElementById('modal-icon');
+            iconBg.className = `w-10 h-10 rounded-lg flex items-center justify-center text-xl font-bold ${data.iconBg} ${data.iconColor}`;
+            icon.className = `fa-solid ${data.icon}`;
+
+            // Populate measures list
+            const measuresUl = document.getElementById('modal-measures');
+            measuresUl.innerHTML = '';
+            data.measures.forEach(measure => {
+                const li = document.createElement('li');
+                li.innerText = measure;
+                measuresUl.appendChild(li);
+            });
+
+            const modal = document.getElementById('risk-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        // Close Modal Function
+        function closeModal() {
+            const modal = document.getElementById('risk-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        // Filter Risk Cards
+        function filterRisks(category) {
+            const cards = document.querySelectorAll('.risk-card');
+            const buttons = ['btn-all', 'btn-fisico', 'btn-ergonomico', 'btn-psicosocial'];
+
+            buttons.forEach(id => {
+                const btn = document.getElementById(id);
+                if (id === `btn-${category}`) {
+                    btn.className = "px-3 py-1.5 rounded-lg bg-orange-500 text-white font-medium shadow-md transition-colors";
+                } else {
+                    btn.className = "px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 font-medium hover:bg-slate-700 transition-colors border border-slate-700";
+                }
+            });
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Risk Calculator Logic
+        function calculateRisk() {
+            const prob = parseInt(document.getElementById('select-prob').value);
+            const sev = parseInt(document.getElementById('select-sev').value);
+            const score = prob * sev;
+
+            const box = document.getElementById('risk-result-box');
+            const title = document.getElementById('risk-level-title');
+            const text = document.getElementById('risk-action-text');
+
+            if (score <= 2) {
+                box.className = "bg-emerald-500/20 border border-emerald-500/40 p-4 rounded-xl text-center";
+                title.className = "heading-font text-xl font-extrabold text-emerald-400 my-1";
+                title.innerText = "RIESGO TRIVIAL / TOLERABLE";
+                text.innerText = "No se requiere acción específica. Mantener los controles existentes.";
+            } else if (score <= 4) {
+                box.className = "bg-amber-500/20 border border-amber-500/40 p-4 rounded-xl text-center";
+                title.className = "heading-font text-xl font-extrabold text-amber-400 my-1";
+                title.innerText = "RIESGO MODERADO";
+                text.innerText = "Se deben hacer esfuerzos para reducir el riesgo. Planificar medidas en un plazo determinado.";
+            } else {
+                box.className = "bg-red-500/20 border border-red-500/40 p-4 rounded-xl text-center";
+                title.className = "heading-font text-xl font-extrabold text-red-400 my-1";
+                title.innerText = "RIESGO IMPORTANTE / INTOLERABLE";
+                text.innerText = "Acción urgente e inmediata. No debe comenzarse el trabajo hasta reducir el peligro.";
+            }
+        }
+
+        // Copy Embed Code for Genially
+        function copyEmbedCode() {
+            const embedCode = `<iframe src="${window.location.href}" width="100%" height="800px" frameborder="0" allowfullscreen></iframe>`;
+            
+            // Temporary textarea fallback for standard clipboard copying
+            const dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = embedCode;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+
+            alert("¡Código iframe copiado al portapapeles! Ahora puedes pegarlo en Genially (Insertar > Código iframe).");
+        }
+    </script>
+</body>
+</html>
